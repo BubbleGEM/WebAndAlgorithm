@@ -1,0 +1,9 @@
+{
+  "name": "javascript",
+  "version": "0.0.1",
+  "description": "written by javascript",
+  "scripts": {},
+  "author": "BUBBLE",
+  "license": "MIT",
+  "type": "module"
+}
