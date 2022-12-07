@@ -1,0 +1,8 @@
+{
+  "name": "web_and_algorithm",
+  "version": "0.0.0",
+  "author": "BUBBLE",
+  "dependencies": {
+    "@types/node": "^18.11.10"
+  }
+}
