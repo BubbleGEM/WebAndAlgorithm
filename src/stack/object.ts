@@ -45,9 +45,11 @@ export class Stack<T> {
     while (!this.isEmpty()) {
       this.pop()
     }
+    console.log(`The stack is cleared successfully.`)
   }
 
   size(): number {
+    console.log(`The stack has ${this.count} elements.`)
     return this.count
   }
 
@@ -72,10 +74,10 @@ export class Stack<T> {
   }
 }
 
-let s = new Stack()
+let s: Stack<any> = new Stack<any>()
 s.push(1)
-s.push(5)
-s.push(3)
+s.push("5")
+s.push(false)
 s.push(2)
 s.push(4)
 console.log(s.size())
