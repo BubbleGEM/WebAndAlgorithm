@@ -1,7 +1,20 @@
 {
   "name": "web_and_algorithm",
-  "version": "0.0.0",
+  "version": "0.0.9",
   "author": "BUBBLE",
+  "description": "What the mean of algorithm?",
+  "private": "false",
+  "license": "MIT",
+  "type": "module",
+  "main": "",
+  "keywords": [
+    "WEB",
+    "ALGORITHM"
+  ],
+  "bugs": {
+    "url": "https://github.com/BubbleGEM/WebAndAlgorithm/issues",
+    "email": "bubblegem0816@gmail.com"
+  },
   "dependencies": {
     "@types/node": "^18.11.10"
   }
