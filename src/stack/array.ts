@@ -18,7 +18,9 @@ export class Stack<T> {
       return null
     } else {
       const topVal = this.items[this.items.length - 1]
-      console.log(`The top of the stack element ${topVal} was successfully deleted.`)
+      console.log(
+        `The top of the stack element ${topVal} was successfully deleted.`
+      )
       return this.items.pop()
     }
   }
