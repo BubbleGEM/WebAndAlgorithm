@@ -1,6 +1,8 @@
 .history
 .vscode
 
+# removed -- rm -r
 *.exe
 
-/example
+# take a test
+example

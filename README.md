@@ -1,3 +1,7 @@
-# by BUBBLE
+# by Faker
 
-## start at 2023
+---
+
+start at 2022.12.24
+
+---
