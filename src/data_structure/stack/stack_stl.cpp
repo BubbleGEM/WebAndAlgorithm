@@ -3,7 +3,17 @@
 
 using namespace std;
 
-void display();
+template <typename T>
+void display(stack<T> s)
+{
+  int length = s.size();
+  while (length > 0)
+  {
+    cout << s.top() << " ";
+    s.pop();
+  }
+  cout << endl;
+}
 
 int main()
 {
@@ -16,7 +26,8 @@ int main()
   s.push(4);
   s.push(19);
   s.push(11);
-  cout << s.size();
-  cout << s.top();
-  display();
+  cout << "There are " << s.size() << " elements in the stack." << endl;
+  cout << "The top of stack element is " << s.top() << "." << endl;
+  cout << "The stack element has ";
+  display(s);
 }
