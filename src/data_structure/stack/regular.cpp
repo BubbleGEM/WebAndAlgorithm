@@ -31,7 +31,7 @@ public:
   {
     if (top == MAX_SIZE - 1)
     {
-      cout << "overflow" << endl;
+      cerr << "overflow" << endl;
     }
     else
     {
@@ -54,7 +54,14 @@ public:
 
   T peek()
   {
-    return s[top - 1];
+    if (top == -1)
+    {
+      return nullptr;
+    }
+    else
+    {
+      return s[top - 1];
+    }
   }
 
   int size()
