@@ -18,14 +18,10 @@ void display(stack<T> s)
 int main()
 {
   stack<int> s;
-  s.push(12);
-  s.push(7);
-  s.push(6);
-  s.push(2);
   s.push(1);
-  s.push(4);
-  s.push(19);
-  s.push(11);
+  s.push(3);
+  s.push(8);
+  s.push(5);
   cout << "There are " << s.size() << " elements in the stack." << endl;
   cout << "The top of stack element is " << s.top() << "." << endl;
   cout << "The stack element has ";
