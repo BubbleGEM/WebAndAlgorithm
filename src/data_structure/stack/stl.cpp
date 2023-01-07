@@ -3,20 +3,16 @@
 
 using namespace std;
 
-template <typename T>
-void display(stack<T> s)
-{
-  int length = s.size();
-  while (length > 0)
-  {
+template<typename T>
+void display(stack<T> s) {
+  while (s.size() > 0) {
     cout << s.top() << " ";
     s.pop();
   }
   cout << endl;
 }
 
-int main()
-{
+int main() {
   stack<int> s;
   s.push(1);
   s.push(3);

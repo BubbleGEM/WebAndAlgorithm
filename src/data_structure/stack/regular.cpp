@@ -4,85 +4,64 @@
 
 using namespace std;
 
-template <typename T>
-class Stack
-{
-private:
-  int top = -1; // 0 ~ MAX_SIZE-1
-  T s[MAX_SIZE];
+template<class T>
+class Stack {
+  private:
+    int top = -1; // 0 ~ MAX_SIZE-1
+    T s[MAX_SIZE];
 
-public:
-  Stack() = default;
+  public:
+    Stack() = default;
 
-  bool isEmpty()
-  {
-    // return top == -1;
-    if (top == -1)
-    {
-      return true;
+    bool isEmpty() {
+      // return top == -1;
+      if (top == -1) {
+        return true;
+      } else {
+        return false;
+      }
     }
-    else
-    {
-      return false;
-    }
-  }
 
-  void push(T element)
-  {
-    if (top == MAX_SIZE - 1)
-    {
-      cerr << "overflow" << endl;
+    void push(T element) {
+      if (top == MAX_SIZE - 1) {
+        cerr << "overflow" << endl;
+      } else {
+        ++top;
+        s[top] = element;
+      }
     }
-    else
-    {
-      ++top;
-      s[top] = element;
-    }
-  }
 
-  void pop()
-  {
-    if (isEmpty())
-    {
-      cout << "underflow" << endl;
+    void pop() {
+      if (isEmpty()) {
+        cout << "underflow" << endl;
+      } else {
+        --top;
+      }
     }
-    else
-    {
-      --top;
-    }
-  }
 
-  T peek()
-  {
-    if (top == -1)
-    {
-      return nullptr;
+    T peek() {
+      if (top == -1) {
+        return nullptr;
+      } else {
+        return s[top - 1];
+      }
     }
-    else
-    {
-      return s[top - 1];
-    }
-  }
 
-  int size()
-  {
-    return top + 1;
-  }
-
-  void display()
-  {
-    int length = top;
-    while (length >= 0)
-    {
-      cout << s[length] << " ";
-      --length;
+    int size() {
+      return top + 1;
     }
-    cout << endl;
-  }
+
+    void display() {
+      int length = top;
+      while (length >= 0) {
+        cout << s[length] << " ";
+        --length;
+      }
+      cout << endl;
+    }
 };
 
-int main()
-{
+int main() {
   Stack<int> s;
   s.push(1);
   s.push(3);
