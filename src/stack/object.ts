@@ -1,31 +1,31 @@
 export class Stack<T> {
-  private count: number
-  // ??
-  // private items: object
-  private items: any
+  items: T[]
+  stack_size: number
 
   constructor() {
-    this.count = 0
-    this.items = {}
+    this.items = []
+    this.stack_size = 0
   }
 
   isEmpty(): boolean {
-    return this.count === 0
+    return this.stack_size === 0
   }
 
-  push(element: T) {
-    this.items[this.count] = element
-    this.count++
+  push(element: T): void {
+    this.items.push(element)
+    this.stack_size += 1
   }
 
   pop(): null | T {
     if (this.isEmpty()) {
       return null
     } else {
-      this.count--
-      const result = this.items[this.count]
-      delete this.items[this.count]
-      return result
+      this.stack_size -= 1
+      const topVal = this.items[this.stack_size]
+      console.log(
+        `The top of the stack element ${topVal} was successfully deleted.`
+      )
+      return topVal
     }
   }
 
@@ -33,53 +33,45 @@ export class Stack<T> {
     if (this.isEmpty()) {
       return null
     } else {
-      return this.items[this.count - 1]
+      const topVal = this.items[this.stack_size]
+      console.log(`The top of the stack element is ${topVal}.`)
+      return this.items[this.items.length - 1]
     }
   }
 
-  clear() {
-    /*
-    this.count = 0
-    this.items = {}
-    */
-    while (!this.isEmpty()) {
-      this.pop()
-    }
-    console.log(`The stack is cleared successfully.`)
+  clear(): void {
+    this.items = []
+    this.stack_size = 0
   }
 
   size(): number {
-    console.log(`The stack has ${this.count} elements.`)
-    return this.count
+    console.log(`The stack has ${this.stack_size} elements.`)
+    return this.stack_size
   }
 
-  display(): null | object {
+  display(): null | string {
     if (this.isEmpty()) {
+      console.log("The stack is empty.")
       return null
     } else {
-      return this.items
-    }
-  }
-
-  toString() {
-    if (this.isEmpty()) {
-      return "";
-    } else {
-      let str: string = `${this.items[0]}`
-      for (let i: number = 1; i < this.count; i++) {
-        str += `, ${this.items[i]}`
+      let items = `${this.items[0]}`
+      for (let i = 1; i < this.stack_size; i++) {
+        items += `,${this.items[i]}`
       }
-      return str
+      console.log(`The stack elements are [${items}]`)
+      return items
     }
   }
 }
 
-let s: Stack<any> = new Stack<any>()
+const s: Stack<number> = new Stack<number>()
 s.push(1)
-s.push("5")
-s.push(false)
-s.push(2)
 s.push(4)
-console.log(s.size())
-console.log(s.display())
-console.log(s.toString())
+s.push(33)
+s.push(43)
+s.push(63)
+s.pop()
+s.peek()
+s.clear()
+s.size()
+s.display()

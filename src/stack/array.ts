@@ -1,32 +1,35 @@
 export class Stack<T> {
-  items: any[]
+  items: T[]
 
   constructor() {
     this.items = []
   }
 
   isEmpty(): boolean {
-    return this.items.length === 0
+    return this.items.length == 0
   }
 
   push(element: T): void {
     this.items.push(element)
   }
 
-  pop(): null | T {
+  popVal(): null | T {
     if (this.isEmpty()) {
+      console.log("underflow")
       return null
     } else {
       const topVal = this.items[this.items.length - 1]
       console.log(
         `The top of the stack element ${topVal} was successfully deleted.`
       )
-      return this.items.pop()
+      this.items.pop()
+      return topVal
     }
   }
 
   peek(): null | T {
     if (this.isEmpty()) {
+      console.log("The stack is empty.")
       return null
     } else {
       const topVal = this.items[this.items.length - 1]
@@ -36,7 +39,9 @@ export class Stack<T> {
   }
 
   clear(): void {
-    this.items = []
+    for (let i = 0; i < this.items.length; i++) {
+      this.items.pop()
+    }
   }
 
   size(): number {
@@ -44,23 +49,29 @@ export class Stack<T> {
     return this.items.length
   }
 
-  display(): null | any[] {
+  display(): null | string {
     if (this.isEmpty()) {
+      console.log("The stack is empty.")
       return null
     } else {
-      console.log(`The stack elements are [${this.items}]`)
-      return this.items
+      let items = `${this.items[0]}`
+      for (let i = 1; i < this.items.length; i++) {
+        items += `,${this.items[i]}`
+      }
+      console.log(`The stack elements are [${items}]`)
+      return items
     }
   }
 }
 
-let s: Stack<any> = new Stack<any>()
+const s: Stack<number> = new Stack<number>()
 s.push(1)
-s.push("2")
-s.push(false)
 s.push(4)
-s.push(6)
-s.pop()
+s.push(33)
+s.push(43)
+s.push(63)
+s.popVal()
 s.peek()
+s.clear()
 s.size()
 s.display()
