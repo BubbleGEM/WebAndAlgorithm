@@ -2,8 +2,7 @@
 
 using namespace std;
 
-int main()
-{
+int main() {
   cout << "Hello Cpp" << endl;
   cout << "Hello Algorithm" << endl;
   return 0;
