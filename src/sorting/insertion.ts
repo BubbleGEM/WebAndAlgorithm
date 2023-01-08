@@ -180,9 +180,9 @@ let array: number[] = [
 ]
 
 function InsertionSort(array: number[]): number[] {
-  for (let index: number = 1; index < array.length; index++) {
+  for (let index = 1; index < array.length; index++) {
     let i: number = index
-    let temp: number = array[index]
+    const temp = array[index]
     while (i > 0 && array[i - 1] > temp) {
       array[i] = array[i - 1]
       i--
@@ -197,10 +197,10 @@ console.log("insertion sorting:\n", InsertionSort(array))
 const end = performance.now()
 const runTime = end - start
 console.log(`Execution time: ${runTime.toFixed(2)} ms`)
-// @ts-ignore
-import * as process from "process"
-
-const used = process.memoryUsage().heapUsed / 1024 / 1024
-console.log(`Memory consumption: ${used.toFixed(2)} MB`)
+// // @ts-ignore
+// import * as process from "process"
+//
+// const used = process.memoryUsage().heapUsed / 1024 / 1024
+// console.log(`Memory consumption: ${used.toFixed(2)} MB`)
 console.log("Language: TypeScript")
 console.log(`Submission time: ${Date().toString()}`)

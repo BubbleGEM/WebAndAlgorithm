@@ -54,11 +54,11 @@ export class Stack<T> {
       console.log("The stack is empty.")
       return null
     } else {
-      let items = `${this.items[0]}`
+      let items = ``
       for (let i = 1; i < this.stack_size; i++) {
-        items += `,${this.items[i]}`
+        items += `${this.items[i]} `
       }
-      console.log(`The stack elements are [${items}]`)
+      console.log(`The stack elements are [${items.trim()}]`)
       return items
     }
   }
@@ -72,6 +72,6 @@ s.push(43)
 s.push(63)
 s.pop()
 s.peek()
-s.clear()
+// s.clear()
 s.size()
 s.display()
