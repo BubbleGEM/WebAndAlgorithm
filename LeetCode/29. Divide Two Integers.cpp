@@ -12,17 +12,6 @@
 
 using namespace std;
 
-class Solution
-{
-public:
-  int divide(int dividend, int divisor)
-  {
-    pow()
-  }
-};
+int main() {
 
-int main()
-{
-  Solution s;
-  s.divide(10, 3);
 }
